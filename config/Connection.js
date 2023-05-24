@@ -1,22 +1,16 @@
-const mongoose = require('mongoose')
 
-const connectionString = process.env.MONGO_DB_URI;
-console.log(connectionString);
+const mongoose=require('mongoose');
+const connectionString=process.env.MONGO_DB_URI; // String coming in from .env .
+mongoose.connect(connectionString); // Connects Mongoose to MongoDB via connectionString.
 
-////MONGO DB TO MONGOOSE CONNECTION///
-mongoose.connnect(connnectionString)
-
-//MONGO DB CONNECTION ON SUCCESS///
-mongoose.connection.on('connnected', () =>{
-    console.log(`[${new Date().toLocaleTimeString()}] Mongo DB connection suc`)
+mongoose.connection.on('connected', () => { 
+    console.log(`[${new Date().toLocaleTimeString()}] - MongoDB connected your ready to go!! `) //Shows MongoDB connection was accomplished.
+})
+mongoose.connection.on('error', (error) => { //MongoDb connnection has an error.
+    console.log('MongoDB connection error ', error)
+})
+mongoose.connection.on('disconnected', () => { //Mongo Db is disconnected.
+    console.log('MongoDB disconnected ') 
 })
 
-//MONGO DB CONNECTION ON ERROR//
-mongoose.connection.on('error',(error)=>{
-    console.log('MongoDb connection error',error)
-})
-
-///MONGO DB DISCONNECTED//
-mongoose.connection.on(`disconnnected`,() => {
-    console.log('MongoDB disconnected')
-});
+module.exports = { mongoose};

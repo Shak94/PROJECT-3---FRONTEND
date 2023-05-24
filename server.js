@@ -13,8 +13,14 @@ app.use(express.json());
 ///ROUTES///
 
 app.get('/',(req,res) =>{
-    res.json("hello World")
+    res.json("home")
 })
+
+app.get('/*', (req, res) => {
+    res.json('Wrong URL');
+});
+
+
 
 app.listen(PORT,() => {
     console.log(` SERVER IS LISTENING ON PORT ${PORT}`)

@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
+require('./config/connection');
 /// My Nightmares Schema ///
 
 const nightmaresSchema = new mongoose.Schema(
     {
         title:{
             type:String,
-            required:[true,"Dream must have a dream title."],
+            required:[true,"Nightmare must have a  title."],
             unique: true
         },
-       description: {
+       meaning: {
             type:String,
-            required:[true,"Dream must have a description/dream meaning."],
+            required:[true,"Nightmare must have a description/nightmare meaning."],
             unique: true
 
         },
-        img:{
+        image:{
             type: String,
             required: true,
             unique: true
@@ -25,4 +26,51 @@ const nightmaresSchema = new mongoose.Schema(
         timestamps: true
     }
 );
-module.exports = Nightmares;
+// module.exports = Nightmares;
+module.exports =[
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+    {
+    title:"",
+    meaning:"",
+    image:""
+},{
+]
