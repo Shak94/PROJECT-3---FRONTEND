@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const Dreams =require('../models/Dreams.js')
+const Dreams =require('../models/Dreams')
 
 
 ///Routes///
