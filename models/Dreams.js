@@ -31,8 +31,8 @@ const dreamsSchema = new mongoose.Schema(
     
 );
 
-const Dreams  = mongoose.model('Dream', dreamsSchema);
-// module.exports = Dreams;
+const Dreams = mongoose.model('Dream', dreamsSchema);
+
 
 module.exports =[
     {
@@ -89,3 +89,4 @@ image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSicmIZiHI6NJOGiW8QZ
 
 ]
 
+module.exports = Dreams;

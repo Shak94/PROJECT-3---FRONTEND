@@ -13,13 +13,14 @@ router.get('/dreams', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/dreams/:id', async (req, res) => {
     try{
 
-        const myDream = await Dreams.findByID(req,params.id)
+        const myDream = await Dreams.findById(req.params.id)
         res.json(myDream)
     } catch(error){
         console.log(error);
     }
 
 });
+module.exports = router;
