@@ -6,6 +6,7 @@ const PORT =process.env.PORT || 4000
 const cors = require('cors');
 const dreamsController=require(`./controllers/dreams`)
 const nightmaresController = require("./controllers/nightmares")
+const seedData = require('./controllers/seedData');
 
 //MIDDLEWARE//
 app.use(cors());
