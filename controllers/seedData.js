@@ -68,4 +68,4 @@ router.get('/seed', async (req, res, next) => {
     }
 })
 
-module.exports = seedData;
+module.exports = router;

@@ -1,18 +1,25 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // If you're using .env file, make sure to require dotenv
 
-const connectionString = process.env.MONGO_DB_URI; // Get the connection string from .env
+// This is my actual string in the .env file coming in
+const connectionString = process.env.MONGO_DB_URI;
 
+// console.log(connectionString);
+
+// This connects mongoDB to Mongoose to provide rules for the models
 mongoose.connect(connectionString);
-
+console.log(connectionString)
+// mongoDB connection on success
 mongoose.connection.on('connected', () => {
-  console.log('Connected to MongoDB');
-});
+    console.log(`[${new Date().toLocaleTimeString()}] - MongoDB connected... 🙌 🙌 🙌`)
+})
 
+// mongoDB connection on error
 mongoose.connection.on('error', (error) => {
-  console.log('MongoDB connection error:', error);
-});
+    console.log('MongoDB connection error ', error)
+})
 
+// disconnecting from mongoDB
 mongoose.connection.on('disconnected', () => {
-  console.log('MongoDB disconnected');
-});
+    console.log('MongoDB disconnected ⚡️ 🔌 ⚡️')
+})
+module.exports = { mongoose};

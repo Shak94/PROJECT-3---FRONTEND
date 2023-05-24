@@ -18,7 +18,7 @@ router.get('/dreams/:id', async (req, res) => {
     try{
 
         const myDream = await Dreams.findById(req.params.id)
-        res.json(myDream)
+        res.json(myDream,"Hello World")
     } catch(error){
         console.log(error);
     }

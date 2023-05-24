@@ -2,7 +2,9 @@
 require("dotenv").config()
 const express = require ('express')
 const app = express ();
-const PORT =process.env.PORT || 4000
+const PORT =process.env.PORT || 6000
+const mongooseConnection = require("./config/connection")
+const mongoose =require('mongoose')
 const cors = require('cors');
 const dreamsController=require(`./controllers/dreams`)
 const nightmaresController = require("./controllers/nightmares")
