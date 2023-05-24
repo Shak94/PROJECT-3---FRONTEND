@@ -16,11 +16,13 @@ router.get('/nightmares', async (req, res) => {
 router.get('/nightmares/:id', async (req, res) => {
     try{
 
-        const myNightmare = await Nightmare.findByID(req,params.id)
+        const myNightmare = await Nightmare.findById(req,params.id)
         res.json(myNightmare)
     } catch(error){
         console.log(error);
     }
 
 });
+
+
 module.exports = router;

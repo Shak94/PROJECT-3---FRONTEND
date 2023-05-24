@@ -114,9 +114,11 @@ const nightmaresSeedData =[
 
 router.get('/seed', async (req, res, next) => {
     try {
-      await Dreams.deleteMany({}); // Remove existing data
-      await Dreams.insertMany(dreamsSeedData); // Insert the seed data
-      res.redirect('/dreams'); // Redirect to a relevant endpoint
+      await Dreams.deleteMany({});
+      await Dreams.insertMany(dreamsSeedData); 
+      await Nightmares.deleteMany({}); 
+      await Nightmares.insertMany(nightmaresSeedData);
+      res.redirect('/dreams');
     } catch (err) {
       console.log(err);
       next(err);

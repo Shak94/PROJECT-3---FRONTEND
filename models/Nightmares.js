@@ -19,6 +19,7 @@ const nightmaresSchema = new mongoose.Schema({
     unique: true,
   },
 }, {
+    collection: "nightmares",
   timestamps: true,
 });
 
