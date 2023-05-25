@@ -16,7 +16,7 @@ router.get('/nightmares', async (req, res) => {
 router.get('/nightmares/:id', async (req, res) => {
     try{
 
-        const myNightmare = await Nightmare.findById(req,params.id)
+        const myNightmare = await Nightmares.findById(req,params.id)
         res.json(myNightmare)
     } catch(error){
         console.log(error);
@@ -26,7 +26,7 @@ router.get('/nightmares/:id', async (req, res) => {
 router.post('/nightmares', async (req, res, next) =>{
     try{
         const newNightmare= req.body
-        await Nightmare.create(req.body);
+        await Nightmares.create(req.body);
         console.log(newNightmare);
         res.redirect ('/nightmares')
     } catch (error){
