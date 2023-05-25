@@ -19,7 +19,7 @@ router.get('/dreams/:id', async (req, res, next) => {
     try{
 
         const myDream = await Dreams.findById(req.params.id)
-        res.json(myDream,"Hello World")
+        res.json(myDream,)
     } catch(error){
         console.log(error);
         next();
@@ -39,7 +39,7 @@ router.post('/dreams', async (req, res, next) =>{
     }
 });
 
-router.put('/dreams/:id', async (req,res, next) => {
+router.put('/dreams/:id', async (req, res, next) => {
     try{
         const editedDreams = await Dreams.findByIdAndUpdate(req.params.id, req.body);
         res.redirect(`/dreams/${req.params.id}`);
@@ -50,7 +50,7 @@ router.put('/dreams/:id', async (req,res, next) => {
 
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/dreams/:id', async (req, res, next) => {
     try{
         const deletedDream = await Dreams.findByIdAndDelete(req.params.id);
         res.redirect('/dreams')
