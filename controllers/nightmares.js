@@ -15,8 +15,7 @@ router.get('/nightmares', async (req, res) => {
 
 router.get('/nightmares/:id', async (req, res) => {
     try{
-
-        const myNightmare = await Nightmares.findById(req,params.id)
+        const myNightmare = await Nightmares.findById(req.params.id)
         res.json(myNightmare)
     } catch(error){
         console.log(error);
@@ -35,16 +34,16 @@ router.post('/nightmares', async (req, res, next) =>{
     }
 });
 
-router.put('/dreams/:id', async (req, res, next) => {
-    try{
-        const editedDreams = await Dreams.findByIdAndUpdate(req.params.id, req.body);
-        res.redirect(`/dreams/${req.params.id}`);
-     } catch(error){
+router.put('/nightmares/:id', async (req, res, next) => {
+    try {
+        const editedNightmare = await Nightmares.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect(`/nightmares/${req.params.id}`);
+    } catch (error) {
         console.log(error);
         next();
-     }
-
+    }
 });
+
 
 router.delete('/dreams/:id', async (req, res, next) => {
     try{
@@ -59,4 +58,3 @@ router.delete('/dreams/:id', async (req, res, next) => {
 module.exports = router;
 
 
-module.exports = router;
