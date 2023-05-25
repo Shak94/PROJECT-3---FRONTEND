@@ -45,10 +45,10 @@ router.put('/nightmares/:id', async (req, res, next) => {
 });
 
 
-router.delete('/dreams/:id', async (req, res, next) => {
+router.delete('/nightmares/:id', async (req, res, next) => {
     try{
-        const deletedDream = await Dreams.findByIdAndDelete(req.params.id);
-        res.redirect('/dreams')
+        const deletedNightmare = await Nightmares.findByIdAndDelete(req.params.id);
+        res.redirect('/nightmares')
     
     } catch(error){
         console.log(error);
