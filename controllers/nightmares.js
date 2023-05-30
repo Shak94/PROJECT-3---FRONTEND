@@ -22,7 +22,7 @@ router.get('/nightmares/:id', async (req, res) => {
     }
 
 });
-router.post('/nightmares', async (req, res, next) =>{
+router.post('/nightmares/nightmaresform', async (req, res, next) =>{
     try{
         const newNightmare= req.body
         await Nightmares.create(req.body);

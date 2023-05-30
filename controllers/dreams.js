@@ -27,7 +27,7 @@ router.get('/dreams/:id', async (req, res, next) => {
 
 });
 
-router.post('/dreams', async (req, res, next) =>{
+router.post('/dreams/dreamsform', async (req, res, next) =>{
     try{
         const newDream = req.body
         await Dreams.create(req.body);
@@ -60,4 +60,6 @@ router.delete('/dreams/:id', async (req, res, next) => {
         next();
     }
 })
+
+
 module.exports = router;
