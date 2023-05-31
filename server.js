@@ -3,7 +3,7 @@ const express = require('express');
 const { json } = require('express');
 const app = express();
 const { PORT, MONGODB_URI } = process.env;
-const mongoose = require('./config/connection');const cors = require('cors');
+const cors = require('cors');
 const Dreams = require('./models/Dreams');
 const Nightmares = require('./models/Nightmares')
 const dreamsController = require('./controllers/dreams');
@@ -27,5 +27,5 @@ app.get('/*', (req, res) => {
   res.json('Wrong URL');
 });
 
-app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
 module.exports=app;
