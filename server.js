@@ -2,9 +2,8 @@ require("dotenv").config();
 const express = require('express');
 const { json } = require('express');
 const app = express();
-const PORT = process.env.PORT || 4000;
-const mongoose = require('./config/connection');
-const cors = require('cors');
+const { PORT, MONGODB_URI } = process.env;
+const mongoose = require('./config/connection');const cors = require('cors');
 const Dreams = require('./models/Dreams');
 const Nightmares = require('./models/Nightmares')
 const dreamsController = require('./controllers/dreams');
