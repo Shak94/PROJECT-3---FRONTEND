@@ -4,7 +4,6 @@ const { json } = require('express');
 const app = express();
 const PORT = process.env.PORT || 4000;
 const mongoose = require('mongoose');
-const mongooseConnection = require('./config/connection');
 const cors = require('cors');
 const Dreams = require('./models/Dreams');
 const Nightmares = require('./models/Nightmares')
