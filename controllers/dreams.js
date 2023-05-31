@@ -19,7 +19,7 @@ router.get('/dreams/:id', async (req, res, next) => {
     try{
 
         const myDream = await Dreams.findById(req.params.id)
-        res.json(myDream,)
+        res.json(myDream)
     } catch(error){
         console.log(error);
         next();
@@ -27,12 +27,11 @@ router.get('/dreams/:id', async (req, res, next) => {
 
 });
 
-router.post('/dreams/dreamsform', async (req, res, next) =>{
+router.post('/dreams', async (req, res, next) =>{
     try{
-        const newDream = req.body
-        await Dreams.create(req.body);
+        const newDream = await Dreams.create(req.body);
         console.log(newDream);
-        res.redirect ('/dreams')
+        res.json(newDream)
     } catch (error){
         console.log(error)
         next();
@@ -41,8 +40,8 @@ router.post('/dreams/dreamsform', async (req, res, next) =>{
 
 router.put('/dreams/:id', async (req, res, next) => {
     try{
-        const editedDreams = await Dreams.findByIdAndUpdate(req.params.id, req.body);
-        res.redirect(`/dreams/${req.params.id}`);
+        const editedDream = await Dreams.findByIdAndUpdate(req.params.id, req.body);
+        res.json(editedDream);
      } catch(error){
         console.log(error);
         next();
@@ -53,7 +52,8 @@ router.put('/dreams/:id', async (req, res, next) => {
 router.delete('/dreams/:id', async (req, res, next) => {
     try{
         const deletedDream = await Dreams.findByIdAndDelete(req.params.id);
-        res.redirect('/dreams')
+        console.log(deletedDream)
+        res.json(deletedDream)
     
     } catch(error){
         console.log(error);

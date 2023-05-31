@@ -7,9 +7,11 @@ const mongoose = require('mongoose');
 const mongooseConnection = require('./config/connection');
 const cors = require('cors');
 const Dreams = require('./models/Dreams');
+const Nightmares = require('./models/Nightmares')
 const dreamsController = require('./controllers/dreams');
 const nightmaresController = require('./controllers/nightmares');
 const seedDataController = require('./controllers/seedData');
+
 
 // MIDDLEWARE
 app.use(cors());
