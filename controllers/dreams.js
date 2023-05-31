@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router();
 const Dreams =require('../models/Dreams')
-
-
 ///Routes///
 
 router.get('/dreams', async (req, res, next ) => {

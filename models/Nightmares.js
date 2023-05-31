@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
-
+require('../config/db.connection')
 // My Nightmares Schema
 const nightmaresSchema = new mongoose.Schema({
   title: {

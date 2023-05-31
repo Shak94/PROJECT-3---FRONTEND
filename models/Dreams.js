@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+require('../config/db.connection')
+
 
 const dreamsSchema = new mongoose.Schema(
     {

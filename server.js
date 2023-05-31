@@ -2,13 +2,13 @@ require("dotenv").config();
 const express = require('express');
 const { json } = require('express');
 const app = express();
-const { PORT, MONGODB_URI } = process.env;
+const { PORT, MONGODB_URI } = process.env || 4000;
 const cors = require('cors');
-const Dreams = require('./models/Dreams');
-const Nightmares = require('./models/Nightmares')
+const mongoose =require('mongoose')
 const dreamsController = require('./controllers/dreams');
 const nightmaresController = require('./controllers/nightmares');
 const seedDataController = require('./controllers/seedData');
+
 
 
 // MIDDLEWARE
